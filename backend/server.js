@@ -6,8 +6,12 @@ const defaultRequest = require("./methods/default")
 
 //1) Server Oluştur
 const server = http.createServer((req, res) => {
+  
  // bütün cevaplara eklenicek ortak veri tipi hedaer'a ekle
- res.setHeader("Content-Type", "application/json")   
+ res.setHeader("Content-Type", "application/json")  
+ 
+ //kaynak paylaşımında sorun yaşamamak için (CORS)
+ res.setHeader("Access-Control-Allow-Origin","*")
 
 // gelen isteiğin method türüne göre cleint'a faklı cevaplar göndericez
    
